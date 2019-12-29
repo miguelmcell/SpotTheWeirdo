@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CursorBehaviour : Bolt.EntityBehaviour<ICursorState>
+public class CursorBehaviour : Bolt.EntityEventListener<ICursorState>
 {
     public override void Attached()
     {
@@ -18,6 +18,11 @@ public class CursorBehaviour : Bolt.EntityBehaviour<ICursorState>
     {
         // CHANGE TO DELAY MOUSE POSITION, USE LERP OR SOMETHING
         transform.position = Input.mousePosition;
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            var selected = SelectEvent.Create();
+            selected.Selected = entity.NetworkId + " clicked";
+            selected.Send();
+        }
     }
 }
