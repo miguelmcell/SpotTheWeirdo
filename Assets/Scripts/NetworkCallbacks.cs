@@ -13,7 +13,6 @@ public class NetworkCallbacks : Bolt.GlobalEventListener
     {
         //var spawnPosition = new Vector3(Random.Range(-8, -8), 0, Random.Range(-8, 8));
         BoltNetwork.Instantiate(BoltPrefabs.Cursor, Vector2.zero, Quaternion.identity);
-        debugText = GameObject.FindGameObjectWithTag("DebugText").GetComponent<Text>();
     }
 
     public override void OnEvent(LogEvent evnt)

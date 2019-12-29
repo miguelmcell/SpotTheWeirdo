@@ -420,7 +420,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d805a058b0c5b48aff43d8a3160c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponObjects:
-  - {fileID: 1359895758}
-  - {fileID: 1752880011}
-  - {fileID: 1135973745}

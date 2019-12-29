@@ -5,24 +5,28 @@ using UnityEngine.UI;
 
 public class CursorBehaviour : Bolt.EntityEventListener<ICursorState>
 {
+    public LeaderboardBehaviour leaderboard;
     public override void Attached()
     {
+        leaderboard = GameObject.FindGameObjectWithTag("Leaderboard").GetComponent<LeaderboardBehaviour>();
         state.SetTransforms(state.CursorTransform, transform);
         if (entity.IsOwner)
         {
             GetComponent<Image>().enabled = false;
         }
     }
+    public void Update()
+    {
+       
+    }
 
     public override void SimulateOwner()
     {
         // CHANGE TO DELAY MOUSE POSITION, USE LERP OR SOMETHING
         transform.position = Input.mousePosition;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            var selected = SelectEvent.Create();
-            selected.Selected = entity.NetworkId + " clicked";
-            selected.Send();
+            leaderboard.changeDebugText(leaderboard.getPlayerName() + " clicked" + Random.Range(1, 100));
         }
     }
 }

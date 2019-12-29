@@ -18,7 +18,7 @@ public class Menu : Bolt.GlobalEventListener
     }
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(10, 10, Screen.width - 20, Screen.height - 20));
+        //GUILayout.BeginArea(new Rect(10, 10, Screen.width - 20, Screen.height - 20));
 
         /*
          if (GUILayout.Button("Start Server", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true)))
@@ -34,7 +34,7 @@ public class Menu : Bolt.GlobalEventListener
         }
         */
 
-        GUILayout.EndArea();
+        //GUILayout.EndArea();
     }
 
     public override void BoltStartDone()

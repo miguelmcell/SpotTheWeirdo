@@ -8,29 +8,14 @@ using UnityEngine.UI;
 public class Master : Bolt.GlobalEventListener
 {
     public Text timerText;
-    public Text leaderboardText;
-    string players = "";
     
     float timer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        timer = 3;
-        leaderboardText = GameObject.FindGameObjectWithTag("Leaderboard").GetComponent<Text>();
-    }
-    public override void OnEvent(UpdatePlayersEvent evnt)
-    {
-        try
-        {
-            Debug.Log("THIS IS ON SERVER " + evnt.Players);
-            players = evnt.Players;
-            leaderboardText.text = evnt.Players;
-        } catch (Exception e)
-        {
-            Debug.Log(e);
-        }
-    }
+    public Text debugText;
+    //public override void OnEvent(SelectEvent evnt)
+    //{
+    //    debugText.text = evnt.Selected + " clicked";
+    //}
 
     // Update is called once per frame
     void Update()
