@@ -7,11 +7,21 @@ using UnityEngine;
 
 public class Menu : Bolt.GlobalEventListener
 {
+    public void StartServer()
+    {
+        BoltLauncher.StartServer();
+    }
+
+    public void StartClient()
+    {
+        BoltLauncher.StartClient();
+    }
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, Screen.width - 20, Screen.height - 20));
 
-        if (GUILayout.Button("Start Server", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true)))
+        /*
+         if (GUILayout.Button("Start Server", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true)))
         {
             // START SERVER
             BoltLauncher.StartServer();
@@ -22,6 +32,7 @@ public class Menu : Bolt.GlobalEventListener
             // START CLIENT
             BoltLauncher.StartClient();
         }
+        */
 
         GUILayout.EndArea();
     }
