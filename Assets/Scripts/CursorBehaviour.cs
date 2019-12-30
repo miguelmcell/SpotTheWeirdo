@@ -15,15 +15,12 @@ public class CursorBehaviour : Bolt.EntityEventListener<ICursorState>
             GetComponent<Image>().enabled = false;
         }
     }
-    public void Update()
-    {
-       
-    }
 
     public override void SimulateOwner()
     {
         // CHANGE TO DELAY MOUSE POSITION, USE LERP OR SOMETHING
         transform.position = Input.mousePosition;
+        //state.SetTransforms(state.CursorTransform, transform);
         if (Input.GetMouseButton(0))
         {
             leaderboard.changeDebugText(leaderboard.getPlayerName() + " clicked" + Random.Range(1, 100));

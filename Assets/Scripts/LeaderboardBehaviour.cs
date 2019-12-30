@@ -55,7 +55,7 @@ public class LeaderboardBehaviour : Bolt.EntityEventListener<ILeaderboardState>
     }
     public void changeDebugText(string txt)
     {
-        var selectingEvent = SelectEvent.Create();
+        var selectingEvent = SelectEvent.Create(entity);
         selectingEvent.Selected = txt;
         selectingEvent.Send();
     }
